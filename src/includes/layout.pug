@@ -1,0 +1,53 @@
+//This is only a sample layout you can create different layouts for different pages since ECCUBE uses layout and blocking system
+//To add a block simply uncomment the class which has an ID.
+//Comment out class with ID which are not used since there are assoicated css properties in this classes and might ruin your layout
+//You can read more about layouts and blocks on ECCUBE manual
+//Delete this instruction comment when creating layouts
+block variables
+- var title = "Sample Title"
+
+doctype html
+html(lang="ja" prefix="og: http://ogp.me/ns#")
+  head
+    title=title
+    link(rel="stylesheet", href="css/main.scss")
+
+  body
+    .body_after
+
+    .ec-layoutRole
+      //Header
+      header.ec-layoutRole__header#ec-layoutRole__header
+
+      .header__menu-overlay
+        //.ec-layoutRole__contentTop#ec-layoutRole__contentTop
+        
+        main.ec-layoutRole__contents
+          
+          .ec-layoutRole__left#ec-layoutRole__left
+            include ../block/block-sample.pug
+
+          .ec-layoutRole__main
+            //.ec-layoutRole__mainTop#ec-layoutRole__mainTop
+          
+            block content
+
+            //.ec-layoutRole__mainBottom#ec-layoutRole__mainBottom
+
+          //.ec-layoutRole__right#ec-layoutRole__right
+
+        //.ec-layoutRole__contentBottom#ec-layoutRole__contentBottom
+        
+        //Footer
+        footer.ec-layoutRole__footer#ec-layoutRole__footer
+        
+      .ec-overlayRole
+      .ec-drawerRoleClose
+      .ec-drawerRole
+      .ec-blockTopBtn.pagetop ページトップへ
+
+    block endbody
+    
+    script(src="../js/ofi.min.js")
+    script(src="https://cdn.jsdelivr.net/npm/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js")
+    script(src="js/index.ts")
