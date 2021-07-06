@@ -1,11 +1,14 @@
+//Settings
 @import 'settings/variables';
+//Tools
 @import 'tools/mixin';
+//Elements
 @import 'elements/reset';
 @import 'elements/global';
 @import 'elements/eccube';
+//Common
 @import 'common/image';
+//Component
 @import 'component/sample';
+//Trumps
 @import 'trumps/helper';
-@import 'trumps/mwform';
-@import 'trumps/pagenavi';
-//@import 'trumps/welcart';
