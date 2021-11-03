@@ -1,6 +1,8 @@
 //This is only a sample layout you can create different layouts for different pages since ECCUBE uses layout and blocking system
 //To add a block simply uncomment the class which has an ID.
 //Comment out class with ID which are not used since there are assoicated css properties in this classes and might ruin your layout
+//As for (.ec-layoutrole__main - for no sidebar, .ec-layoutRole__mainWithColumn - for one sidebar either left or right, .ec-layoutRole__mainBetweenColumn) you can only use one of them comment out or remove the others that is not needed
+//Remove the include file of bootstrap when adding the layout to eccube
 //You can read more about layouts and blocks on ECCUBE manual
 //Delete this instruction comments when creating layouts
 block variables
@@ -11,6 +13,7 @@ html(lang="ja" prefix="og: http://ogp.me/ns#")
   head
     title=title
     link(rel="stylesheet", href="css/main.scss")
+    include ../block/block-head-bootstrap.pug
 
   body
     .body_after
@@ -19,32 +22,33 @@ html(lang="ja" prefix="og: http://ogp.me/ns#")
       //Header
       header.ec-layoutRole__header#ec-layoutRole__header
 
-      .header__menu-overlay
-        //.ec-layoutRole__contentTop#ec-layoutRole__contentTop
+      //.ec-layoutRole__contentTop#ec-layoutRole__contentTop
+      
+      main.ec-layoutRole__contents
         
-        main.ec-layoutRole__contents
-          
-          .ec-layoutRole__left#ec-layoutRole__left
-            include ../block/block-sample.pug
+        .ec-layoutRole__left#ec-layoutRole__left
+          include ../block/block-sample.pug
 
-          .ec-layoutRole__main
-            //.ec-layoutRole__mainTop#ec-layoutRole__mainTop
-          
-            block content
-
-            //.ec-layoutRole__mainBottom#ec-layoutRole__mainBottom
-
-          //.ec-layoutRole__right#ec-layoutRole__right
-
-        //.ec-layoutRole__contentBottom#ec-layoutRole__contentBottom
+        //.ec-layoutRole__mainWithColumn
+        //.ec-layoutRole__mainBetweenColumn
+        .ec-layoutRole__main
+          //.ec-layoutRole__mainTop#ec-layoutRole__mainTop
         
-        //Footer
-        footer.ec-layoutRole__footer#ec-layoutRole__footer
+          block content
+
+          //.ec-layoutRole__mainBottom#ec-layoutRole__mainBottom
+
+        //.ec-layoutRole__right#ec-layoutRole__right
+
+      //.ec-layoutRole__contentBottom#ec-layoutRole__contentBottom
+      
+      //Footer
+      footer.ec-layoutRole__footer#ec-layoutRole__footer
         
-      .ec-overlayRole
-      .ec-drawerRoleClose
-      .ec-drawerRole
-      .ec-blockTopBtn.pagetop ページトップへ
+    .ec-overlayRole
+    .ec-drawerRoleClose
+    .ec-drawerRole
+    .ec-blockTopBtn.pagetop ページトップへ
 
     block endbody
     
